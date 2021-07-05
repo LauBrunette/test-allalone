@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+    {% block metaTitle %}
+
+        Les catégories
+
+    {% endblock metaTitle %}
+
+{% block main %}
+    <div>
+        <h1>{{ category.title }}</h1>
+        <p>{{ category.content }}</p>
+    </div>
+{% endblock main %}

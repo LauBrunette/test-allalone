@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    background-color: lightskyblue;
+}
+ul li {
+    list-style: none;
+    display: inline;
+    margin: 150px;
+}
+
+img {
+    height: 100px;
+    width: auto;
+}
