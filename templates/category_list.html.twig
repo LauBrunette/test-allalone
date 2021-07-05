@@ -7,27 +7,25 @@
     {% endblock metaTitle %}
 
 {% block main %}
+    <div class="container-list">
+        <div class="title-list">
+            <h1>Nombre d'articles dans la base de données : {{ categories | length }}</h1>
+        </div>
 
-    <h1>Il y a {{ categories | length }} articles dans la base de données</h1>
+        <div class="category-list">
+            {% for category in categories %}
+                {%  if category.published %}
+                    <article>
+                        <a href={{ path('categoryShow', {'id': category.id} ) }}>
 
-    <div class="show">
-        {% for category in categories %}
-            {%  if category.published %}
-                <article>
+                            <h3>{{ category.title }}, ID : {{ category.id }}</h3>
+                            <p>{{ category.content }}</p>
 
-                    <!-- Quand on clique sur le lien, ça renvoie au chemin "articleShow"
-                     qui ouvre donc le fichier twig "article_show". On passe la wildcard ID
-                     afin de boucler sur l'article sur lequel on a cliqué.
-                     "path" est une fonction -->
-                    <a href={{ path('categoryShow', {'id': category.id} ) }}>
-
-                        <h3>{{ category.title }}, ID : {{ category.id }}</h3>
-                        <p>{{ category.content }}</p>
-
-                    </a>
-                </article>
-            {% endif %}
-        {% endfor %}
+                        </a>
+                    </article>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 
 {% endblock main %}
