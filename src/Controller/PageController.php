@@ -17,4 +17,11 @@ class PageController extends AbstractController
     public function home() {
         return $this->render('home.html.twig');
     }
+
+    /**
+     * @Route("/notrehistoire", name="story")
+     */
+    public function story() {
+        return $this->render('story.html.twig');
+    }
 }

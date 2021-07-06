@@ -36,8 +36,7 @@ main {
     display: flex;
     justify-content: center;
     padding: 80px;
-    height: 80vh;
-    background-color: beige;
+    background-color: lightgoldenrodyellow;
 }
 h3 {
     margin-top: 50px;
