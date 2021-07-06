@@ -6,26 +6,24 @@
 
     {% endblock metaTitle %}
 
-{% block main %}
-    <div class="container-list">
-        <div class="title-list">
-            <h1>Nombre d'articles dans la base de données : {{ categories | length }}</h1>
+    {% block main %}
+
+        <div class="container-list">
+            <div class="title-list">
+                <h1>Nombre d'articles dans la base de données : {{ categories | length }}</h1>
+            </div>
+
+            <div class="category-list">
+                {% for category in categories %}
+                        <article>
+                            <a href={{ path('categoryShow', {'id': category.id} ) }}>
+
+                                <h3>{{ category.title }}, ID : {{ category.id }}</h3>
+
+                            </a>
+                        </article>
+                {% endfor %}
+            </div>
         </div>
 
-        <div class="category-list">
-            {% for category in categories %}
-                {%  if category.published %}
-                    <article>
-                        <a href={{ path('categoryShow', {'id': category.id} ) }}>
-
-                            <h3>{{ category.title }}, ID : {{ category.id }}</h3>
-                            <p>{{ category.content }}</p>
-
-                        </a>
-                    </article>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-
-{% endblock main %}
+    {% endblock main %}

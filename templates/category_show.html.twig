@@ -2,13 +2,13 @@
 
     {% block metaTitle %}
 
-        Les catégories
+        La catégorie : {{ category.title }}
 
     {% endblock metaTitle %}
 
-{% block main %}
-    <div class="container-show">
-        <h1>{{ category.title }}</h1>
-        <p>{{ category.content }}</p>
-    </div>
-{% endblock main %}
+    {% block main %}
+        <div class="container-show">
+            <h1>{{ category.title }}</h1>
+            <p>{{ category.content }}</p>
+        </div>
+    {% endblock main %}

@@ -16,6 +16,10 @@ nav ul li, footer ul li {
     display: inline;
     margin: 100px;
 }
+img {
+    height: 100px;
+    width: auto;
+}
                                             /* HEADER ET FOOTER */
 header, footer {
     text-transform: uppercase;
@@ -28,21 +32,13 @@ header, footer {
     background: radial-gradient(circle, rgba(195,255,175,1) 0%, rgba(255,172,172,1) 50%, rgba(251,255,211,1) 100%);
 }
                                                 /* MAIN */
-.container-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-article {
-    padding: 10px;
-    margin: 20px;
-}
-img {
-    height: 100px;
-    width: auto;
-}
-.container-show {
-    max-width: 500px;
+main {
     display: flex;
     justify-content: center;
+    padding: 80px;
+    height: 80vh;
+    background-color: beige;
+}
+h3 {
+    margin-top: 50px;
 }
