@@ -15,11 +15,11 @@
 
             <nav>
                 <div class="nav-img">
-                    <img src={{ asset('images/rose.png') }}>
+                    <a href={{ path('home') }}><img src={{ asset('images/rose.png') }}></a>
                 </div>
                 <div class="nav-list">
                     <ul>
-                        <li>Catégories</li>
+                        <a href={{ path('categoriesList') }}><li>Catégories</li></a>
                         <li>Notre histoire</li>
                         <li>Formulaire</li>
                     </ul>

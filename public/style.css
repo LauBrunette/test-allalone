@@ -42,3 +42,20 @@ main {
 h3 {
     margin-top: 50px;
 }
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+.homepage>h1 {
+    font-size: 8em;
+    padding-bottom: 30px;
+}
+.homepage>h2 {
+    font-size: 6em;
+    padding: 30px;
+    text-align: right;
+}
+
