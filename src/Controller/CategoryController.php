@@ -43,7 +43,7 @@ la politique est le plus souvent assortie d'une épithète qui détermine sa dé
     public function categoriesList()
     {
         return $this->render('category_list.html.twig', [
-        'categories' =>$this->categories
+        'categories' => $this->categories
         ]);
     }
 

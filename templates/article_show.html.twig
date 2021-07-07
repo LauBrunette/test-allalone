@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+    {% block metaTitle %}
+
+        L'article : {{ article.title }}
+
+    {% endblock metaTitle %}
+
+    {% block main %}
+
+        <div class="container-show">
+
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.description }}</p>
+            <!-- Permet d'afficher une date correctement -->
+            <p>Article écrit le : {{ article.createdAt | date('y-m-d') }}</p>
+
+        </div>
+
+    {% endblock main %}

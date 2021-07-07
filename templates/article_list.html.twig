@@ -1,0 +1,29 @@
+{% extends ('base.html.twig') %}
+
+    {% block metaTitle %}
+
+        Liste des articles
+
+    {% endblock metaTitle %}
+
+    {% block main %}
+
+        <div class="container-list">
+            <div class="title-list">
+                <h1>Nombre d'articles dans la base de données : {{ articles | length }}</h1>
+            </div>
+
+            <div class="category-list">
+                {% for article in articles %}
+                    <article>
+                        <a href={{ path('articleShow', {'id': article.id} ) }}>
+
+                            <h3>{{ article.title }}, ID : {{ article.id }}</h3>
+
+                        </a>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+
+    {% endblock main %}
