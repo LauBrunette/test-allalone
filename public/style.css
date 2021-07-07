@@ -4,24 +4,46 @@
     margin: 0px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+                                                /* HOMEPAGE */
+.homepage {
+    max-width: 1000px;
+}
+.homepage h1 {
+    font-size: 7em;
+    padding-bottom: 40px;
+}
+.homepage h2 {
+    font-size: 5em;
+    text-align: end;
+    padding-top: 40px;
+}
+.homepage-block {
+    display: flex;
+    justify-content: center;
+    padding: 80px;
+}
+.homepage p {
+    line-height: 30px;
+}
                                                 /* NAV BAR */
 nav {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 50px;
 }
-nav ul li, footer ul li {
+nav ul li {
     list-style: none;
     display: inline;
-    margin: 100px;
+    margin: 50px;
 }
-img {
+header img {
     height: 100px;
     width: auto;
 }
                                             /* HEADER ET FOOTER */
-header, footer {
+header {
     text-transform: uppercase;
     font-weight: bold;
     display: flex;
@@ -29,25 +51,47 @@ header, footer {
     align-items: center;
     height: 15vh;
     width: 100%;
-    background: radial-gradient(circle, rgba(195,255,175,1) 0%, rgba(255,172,172,1) 50%, rgba(251,255,211,1) 100%);
+    background: linear-gradient(90deg, rgba(255,217,234,0.8435968137254902) 5%, rgba(148,187,233,1) 100%);
+}
+header a:link {
+    text-decoration: none;
+}
+header a:hover {
+    text-decoration: underline;
+    color: white;
+}
+header a:visited {
+    text-decoration: underline;
+    color: white;
+}
+footer {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 15vh;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,217,234,0.8435968137254902) 5%, rgba(148,187,233,1) 100%);
+}
+footer ul li {
+    list-style: none;
+    display: inline;
+    margin-right: 50px;
+}
+.footer-div {
+    padding-right: 50px;
 }
                                                 /* MAIN */
 main {
     display: flex;
     justify-content: center;
     padding: 80px;
-    background-color: lightgoldenrodyellow;
 }
 h3 {
     margin-top: 50px;
 }
-a:link {
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-    color: white;
-}
+
 .homepage>h1 {
     font-size: 8em;
     padding-bottom: 30px;
@@ -56,6 +100,10 @@ a:hover {
     font-size: 6em;
     padding: 30px;
     text-align: right;
+}
+.container-show h1 {
+    font-size: 2em;
+    padding-bottom: 40px;
 }
 
 
