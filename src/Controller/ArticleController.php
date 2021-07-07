@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends AbstractController
@@ -38,6 +39,11 @@ class ArticleController extends AbstractController
     {
         // Un seul article en fonction de l'ID en wildcard {}
         $article = $articleRepository->find($id);
+
+        // Si l'article n'existe pas en BDD, on envoit une erreur 404 grâce à la méthode throw
+        if (is_null($article)) {
+            throw new NotFoundHttpException();
+        }
 
         return $this->render('article_show.html.twig', [
             'article' => $article
