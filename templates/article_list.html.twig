@@ -13,7 +13,7 @@
                 <h1>Nombre d'articles dans la base de données : {{ articles | length }}</h1>
             </div>
 
-            <div class="category-list">
+            <div class="list">
                 {% for article in articles %}
                     <article>
                         <a href={{ path('articleShow', {'id': article.id} ) }}>
