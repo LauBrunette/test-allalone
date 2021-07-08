@@ -18,6 +18,10 @@ class TagController extends AbstractController
     {
         $tags = $tagRepository->findAll();
 
+        if (is_null($tags)) {
+            throw new NotFoundHttpException();
+        }
+
         return $this->render('tag_list.html.twig', [
             'tags' => $tags
         ]);
@@ -30,7 +34,7 @@ class TagController extends AbstractController
     {
         $tag = $tagRepository->find($id);
 
-        // Si le tag n'existe pas en BDD, on envoit une erreur 404 grâce à la méthode throw
+        // Si le tag n'existe pas en BDD, on envoit une erreur 404 grâce à la méthode "throw"
         if (is_null($tag)) {
             throw new NotFoundHttpException();
         }

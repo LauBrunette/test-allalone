@@ -26,6 +26,10 @@ class ArticleController extends AbstractController
 
         $articles = $articleRepository->findAll();
 
+        if (is_null($articles)) {
+            throw new NotFoundHttpException();
+        }
+
         return $this->render('article_list.html.twig', [
             'articles' => $articles
         ]);
