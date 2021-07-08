@@ -15,6 +15,7 @@
                 <p>{{ article.description }}</p>
                 <!-- Permet d'afficher une date correctement -->
                 <p>Article écrit le : {{ article.createdAt | date('y-m-d') }}</p>
+                <p>Catégorie : {{ article.category.title }}</p>
             </article>
 
         </div>
