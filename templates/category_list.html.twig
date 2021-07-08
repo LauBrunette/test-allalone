@@ -11,6 +11,7 @@
         <div class="container-list">
             <div class="title-list">
                 <h1>Nombre de catégories dans la base de données : {{ categories | length }}</h1>
+                <p>Cliquez sur une catégorie pour voir les articles qui y sont liés.</p>
             </div>
 
             <div class="list">
@@ -18,7 +19,7 @@
                         <article>
                             <a href={{ path('categoryShow', {'id': category.id} ) }}>
 
-                                <h3>{{ category.title }}, ID : {{ category.id }}</h3>
+                                <h3>{{ category.title }}</h3>
 
                             </a>
                         </article>

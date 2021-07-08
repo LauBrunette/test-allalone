@@ -11,6 +11,7 @@
         <div class="container-list">
             <div class="title-list">
                 <h1>Nombre d'articles dans la base de données : {{ articles | length }}</h1>
+                <p>Cliquez sur un article pour afficher les détails.</p>
             </div>
 
             <div class="list">
@@ -18,7 +19,7 @@
                     <article>
                         <a href={{ path('articleShow', {'id': article.id} ) }}>
 
-                            <h3>{{ article.title }}, ID : {{ article.id }}</h3>
+                            <h3>{{ article.title }}</h3>
 
                         </a>
                     </article>

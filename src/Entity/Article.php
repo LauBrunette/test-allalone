@@ -37,10 +37,17 @@ class Article
      */
     private $isPublished;
 
+    // Permet de lier l'entity Category grâce à la méthode ManyToOne
+    // Ne pas oublier de faire les getters et setters à la fin aussi
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="articles")
      */
     private $category;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tag", inversedBy="articles")
+     */
+    private $tag;
 
     public function getId(): ?int
     {
@@ -110,5 +117,21 @@ class Article
     public function setCategory($category): void
     {
         $this->category = $category;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTag()
+    {
+        return $this->tag;
+    }
+
+    /**
+     * @param mixed $tag
+     */
+    public function setTag($tag): void
+    {
+        $this->tag = $tag;
     }
 }

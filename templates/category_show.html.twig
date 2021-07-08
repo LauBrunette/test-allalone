@@ -13,7 +13,16 @@
             <article>
 
                 <h1>{{ category.title }}</h1>
-                <p>{{ category.description }}</p>
+                <p>Desc. : {{ category.description }}</p>
+
+                <ul>
+                    {% for article in category.articles %}
+
+                        <li>{{ article.title }}</li>
+
+                    {% endfor %}
+
+                </ul>
 
             </article>
 

@@ -103,11 +103,13 @@ h3 {
 }
 .container-show h1 {
     font-size: 2em;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
-article>p {
-    padding: 60px;
+.container-show article ul li {
+    margin: 30px;
 }
-
+.par p {
+    margin-top: 20px;
+}
 
 

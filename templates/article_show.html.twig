@@ -14,8 +14,11 @@
                 <h1>{{ article.title }}</h1>
                 <p>{{ article.description }}</p>
                 <!-- Permet d'afficher une date correctement -->
-                <p>Article écrit le : {{ article.createdAt | date('y-m-d') }}</p>
-                <p>Catégorie : {{ article.category.title }}</p>
+                <div class="par">
+                    <p><strong>Article écrit le : </strong>{{ article.createdAt | date('y-m-d') }}</p>
+                    <p><strong>Catégorie : </strong>{{ article.category.title }}</p>
+                    <p><strong>Tag : </strong>{{ article.tag.name }}</p>
+                </div>
             </article>
 
         </div>
