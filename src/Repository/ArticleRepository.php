@@ -37,8 +37,15 @@ class ArticleRepository extends ServiceEntityRepository
             // pour récupérer tous les attributs de l’entité (équivalent à SELECT *)
             ->select('article')
 
-            // On doit passer un paramètre de requête ici :
+            // Faire les jointures : cela permet étendre la recherche aux entity visées
+            ->leftJoin('article.category', 'category')
+            ->leftJoin('article.tag', 'tag')
+
+            // On doit passer des paramètres de requête ici :
             ->where('article.description LIKE :term')
+            ->orWhere('article.title LIKE :term')
+            ->orWhere('category.title LIKE :term')
+            ->orWhere('tag.name LIKE :term')
 
             // Permet de filtrer la requête de l'utilisateur afin d'éviter les hacks
             ->setParameter('term', '%'.$term.'%')

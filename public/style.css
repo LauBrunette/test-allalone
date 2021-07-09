@@ -29,14 +29,14 @@
 nav {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 0 50px;
 }
 nav ul li {
     list-style: none;
     display: inline;
-    margin: 50px;
+    margin: 30px;
 }
 header img {
     height: 100px;
@@ -115,5 +115,20 @@ h3 {
 .container-list h1 {
     text-align: center;
 }
+                                              /* INPUT SEARCH */
+input[type=text] {
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    box-shadow: 12px 12px 12px 2px rgba(0, 0, 255, .2), inset 0.2em 0.2em rgba(0, 0, 255, .2);
+}
+input[type=submit] {
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    width: 50px;
+}
+
 
 
