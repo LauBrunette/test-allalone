@@ -38,12 +38,13 @@ class Category
      */
     private $isPublished;
 
+    // Ceci est une propriété
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="category")
      */
     private $articles;
 
-    // Pour dire que $articles est un tableau
+    // Pour dire que $articles est un tableau : faire un constructor
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -101,7 +102,7 @@ class Category
 
         return $this;
     }
-
+    // Nous permet de récupérer les articles comme la propriété est privée
     /**
      * @return mixed
      */

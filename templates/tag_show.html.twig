@@ -5,8 +5,14 @@
 
         <div class="container-show">
 
-            <article>
-                <h1>{{ tag.name }}, ID : {{ tag.id }}</h1>
+            <article class="tag">
+                <h1 style="background-color: {{ tag.color }}">{{ tag.name }}</h1>
+
+                <p>Liste des articles pour ce tag : </p>
+                {% for article in tag.articles  %}
+                    <p>{{ article.title }}</p>
+                    <a href="{{ path('articleShow', {'id': article.id}) }}">Voir l'article</a>
+                {% endfor %}
             </article>
 
         </div>

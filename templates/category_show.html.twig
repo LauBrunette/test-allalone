@@ -12,13 +12,17 @@
 
             <article>
 
-                <h1>{{ category.title }}</h1>
-                <p>Desc. : {{ category.description }}</p>
+                <h2>{{ category.title }}</h2>
+                <p><strong>Desc. : </strong>{{ category.description }}</p>
 
                 <ul>
                     {% for article in category.articles %}
 
+                    <a href={{ path('articleShow', {'id': article.id} ) }}>
+
                         <li>{{ article.title }}</li>
+
+                    </a>
 
                     {% endfor %}
 

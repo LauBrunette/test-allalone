@@ -55,5 +55,24 @@ class ArticleController extends AbstractController
 
     }
 
+    // Créer une route qui permet de rechercher du contenu
+    /**
+     * @Route("/search", name="search")
+     */
+    public function search(ArticleRepository $articleRepository)
+    {
+        // Résultat de la recherche de l'utilisateur (en dur pour le moment)
+        $term = 'Mammifère';
+
+        // Méthode searchByTerm : récupère le contenu de la recherche, donc le $term
+        $articles = $articleRepository->searchByTerm($term);
+
+        // On affiche mles résultats dans un fichier twig
+        return $this->render('article_search.html.twig', [
+            'articles' => $articles
+        ]);
+    }
+
+
 }
 
