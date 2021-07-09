@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -56,13 +57,15 @@ class ArticleController extends AbstractController
     }
 
     // Créer une route qui permet de rechercher du contenu
+    // On instancie les classes ArticleRepository et Request afin de se servir de leur fonctionnalités
     /**
      * @Route("/search", name="search")
      */
-    public function search(ArticleRepository $articleRepository)
+    public function search(ArticleRepository $articleRepository, Request $request)
     {
-        // Résultat de la recherche de l'utilisateur (en dur pour le moment)
-        $term = 'Mammifère';
+        // Résultat de la recherche de l'utilisateur (on récupère ce qu'il y a dans le "q")
+        // On récupère ce qu'il y a dans l'URL
+        $term = $request->query->get('q');
 
         // Méthode searchByTerm : récupère le contenu de la recherche, donc le $term
         $articles = $articleRepository->searchByTerm($term);
