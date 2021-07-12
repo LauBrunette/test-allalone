@@ -28,7 +28,7 @@ class Article
     private $description;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $createdAt;
 
@@ -78,16 +78,14 @@ class Article
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt()
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt($createdAt): void
     {
         $this->createdAt = $createdAt;
-
-        return $this;
     }
 
     public function getIsPublished(): ?bool
