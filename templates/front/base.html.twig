@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale=1.0>
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>{% block metaTitle %}{% endblock metaTitle %}</title>
+        <!-- la fonction asset va chercher le fichier dans le dossier public directement -->
+        <!-- asset : JS, images, CSS, etc. -->
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+    </head>
+    <body>
+
+        <header>
+
+            <nav>
+                <div class="nav-img">
+                    <a href={{ path('home') }}><img src={{ asset('images/rose.png') }}></a>
+                </div>
+                <div class="nav-list">
+                    <ul>
+                        <a href={{ path('front_category_list') }}><li>Catégories</li></a>
+                        <a href={{ path('front_article_list') }}><li>Articles</li></a>
+                        <a href={{ path('tagList') }}><li>Les tags</li></a>
+                        <a href={{ path('story') }}><li>Notre histoire</li></a>
+                        <a href=""><li>Formulaire</li></a>
+                    </ul>
+                </div>
+                <!-- Créer un formulaire avec une méthode GET pour récupérer les données (apparaît dans l'URL) -->
+                <form action="{{ path('search') }}" method="get">
+                    <input type="text" name="q" placeholder="Rechercher">
+                    <input type="submit" value="go !">
+                </form>
+
+            </nav>
+
+        </header>
+        <main>
+
+            {% block main %}
+            {% endblock main %}
+
+        </main>
+        <footer>
+
+            <div class="footer-div">
+                <ul class="footer-li">
+                    <li>Mentions mégales</li>
+                    <li>Contact</li>
+                    <li>A propos</li>
+                </ul>
+            </div>
+
+        </footer>
+
+    </body>
+</html>

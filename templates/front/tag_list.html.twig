@@ -1,0 +1,27 @@
+{% extends 'front/base.html.twig' %}
+
+    {% block main %}
+
+        <div class="container-list">
+            <div class="title-list">
+                <h1>Nombre de tags dans la base de données : {{ tags | length }}</h1>
+            </div>
+            <div class="list">
+
+                {% for tag in tags %}
+                    <article>
+                        <a href={{ path('tagShow', {'id': tag.id} ) }}>
+
+                            <h3 style="background-color: {{ tag.color }}">{{ tag.name }}</h3>
+
+                        </a>
+                    </article>
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+
+    {% endblock main %}
+

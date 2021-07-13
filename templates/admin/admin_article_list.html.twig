@@ -1,0 +1,37 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+    {% block metaTitle %}
+
+        Liste des articles
+
+    {% endblock metaTitle %}
+
+    {% block main %}
+
+        <div class="container-list">
+            <div class="title-list">
+                <h1>Nombre d'articles dans la base de données : {{ articles | length }}</h1>
+                <p>Cliquez sur un article pour afficher les détails.</p>
+            </div>
+
+            <div class="list">
+                {% for article in articles %}
+                    <article>
+                        <a href={{ path('admin_article_list', {'id': article.id} ) }}>
+
+                            <h3>{{ article.title }}</h3>
+
+                        </a>
+                        <a href="{{ path('admin_article_delete', {'id': article.id }) }}">Supprimer</a>
+                        <a href="{{ path('admin_article_update', {'id': article.id }) }}">Mettre à jour (hardcodé)</a>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="insert-button">
+
+            <a href="{{ path('admin_article_insert') }}">Ajouter un article (hardcodé)</a>
+
+        </div>
+
+    {% endblock main %}

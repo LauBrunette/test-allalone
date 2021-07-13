@@ -1,4 +1,4 @@
-{% extends ('base.html.twig') %}
+{% extends 'front/base.html.twig' %}
 
     {% block metaTitle %}
 
@@ -19,7 +19,7 @@
             <div class="list">
                 {% for category in categories %}
                         <article>
-                            <a href={{ path('categoryShow', {'id': category.id} ) }}>
+                            <a href={{ path('front_category_show', {'id': category.id} ) }}>
 
                                 <h3>{{ category.title }}</h3>
 

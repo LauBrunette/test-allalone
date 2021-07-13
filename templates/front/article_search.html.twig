@@ -1,23 +1,18 @@
-{% extends ('base.html.twig') %}
+{% extends 'front/base.html.twig' %}
 
-    {% block metaTitle %}
-
-        Liste des articles
-
-    {% endblock metaTitle %}
 
     {% block main %}
 
         <div class="container-list">
             <div class="title-list">
-                <h1>Nombre d'articles dans la base de données : {{ articles | length }}</h1>
+                <h1>Il y a {{ articles | length}} article.s correspondant à votre recherche :</h1>
                 <p>Cliquez sur un article pour afficher les détails.</p>
             </div>
 
             <div class="list">
                 {% for article in articles %}
                     <article>
-                        <a href={{ path('articleShow', {'id': article.id} ) }}>
+                        <a href={{ path('front_article_show', {'id': article.id} ) }}>
 
                             <h3>{{ article.title }}</h3>
 

@@ -22,7 +22,7 @@ class ArticleRepository extends ServiceEntityRepository
 
 
     // Fonction permettant de rechercher selon des critères précis.
-    // La variable $term est le résultat de la recherche de l'utilisateur (dans l'ArticleController)
+    // La variable $term est le résultat de la recherche de l'utilisateur (dans l'AdminArticleController)
     public function searchByTerm($term)
     {
         // Objet qui permet de créer des requêtes SQL afin de trouver des infos en BDD.

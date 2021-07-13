@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Front;
 
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CategoryController extends AbstractController
+class FrontCategoryController extends AbstractController
 {
 
     /**
-     * @Route("/categories", name="categoryList")
+     * @Route("/categories", name="front_category_list")
      */
     public function categoriyList(CategoryRepository $categoryRepository)
     {
@@ -21,13 +21,13 @@ class CategoryController extends AbstractController
             throw new NotFoundHttpException();
         }
 
-        return $this->render('category_list.html.twig', [
+        return $this->render('front/category_list.html.twig', [
             'categories' => $categories
         ]);
     }
 
     /**
-     * @Route("categories/{id}", name="categoryShow")
+     * @Route("/categories/{id}", name="front_category_show")
      */
     public function categoryShow($id, CategoryRepository $categoryRepository)
     {
@@ -37,7 +37,7 @@ class CategoryController extends AbstractController
             throw new NotFoundHttpException();
         }
 
-        return $this->render('category_show.html.twig', [
+        return $this->render('front/category_show.html.twig', [
         'category'=> $category
         ]);
     }

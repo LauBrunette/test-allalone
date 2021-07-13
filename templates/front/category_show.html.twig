@@ -1,0 +1,35 @@
+{% extends 'front/base.html.twig' %}
+
+    {% block metaTitle %}
+
+        La catégorie : {{ category.title }}
+
+    {% endblock metaTitle %}
+
+    {% block main %}
+
+        <div class="container-show">
+
+            <article>
+
+                <h2>{{ category.title }}</h2>
+                <p><strong>Desc. : </strong>{{ category.description }}</p>
+
+                <ul>
+                    {% for article in category.articles %}
+
+                    <a href={{ path('front_article_show', {'id': article.id} ) }}>
+
+                        <li>{{ article.title }}</li>
+
+                    </a>
+
+                    {% endfor %}
+
+                </ul>
+
+            </article>
+
+        </div>
+
+    {% endblock main %}

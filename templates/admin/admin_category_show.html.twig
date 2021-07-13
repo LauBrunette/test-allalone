@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/admin_base.html.twig' %}
 
     {% block metaTitle %}
 
@@ -18,11 +18,11 @@
                 <ul>
                     {% for article in category.articles %}
 
-                    <a href={{ path('articleShow', {'id': article.id} ) }}>
+                        <a href={{ path('admin_article_show', {'id': article.id} ) }}>
 
-                        <li>{{ article.title }}</li>
+                            <li>{{ article.title }}</li>
 
-                    </a>
+                        </a>
 
                     {% endfor %}
 
