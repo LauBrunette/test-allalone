@@ -8,6 +8,7 @@ use App\Repository\CategoryRepository;
 use App\Repository\TagRepository;
 use App\Entity\Article;
 use App\Entity\Tag;
+use ContainerE94sIKn\get_Maker_AutoCommand_MakeEntity_LazyService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,10 +43,25 @@ class AdminArticleController extends AbstractController
     /**
      * @Route("/admin/articles/insert", name="admin_article_insert")
      */
-    public function insertArticle()
+    public function insertArticle(Request $request, EntityManagerInterface $entityManager)
     {
         $article = new Article();
+
+        // Permet de générer le formulaire en utilisant un gabarit standard, et une instance de l'entité Article
         $articleForm = $this->createForm(ArticleType::class, $article);
+
+        // Permet de lier le formulaire aux données envoyées en POST
+        $articleForm->handleRequest($request);
+
+        // Si le formulaire a été envoyé et que les champs sont tous remplis et valides (du bon type)
+        if ($articleForm->isSubmitted() && $articleForm->isValid() ) {
+            // On pré-sauvegarde les données
+            $entityManager->persist($article);
+            // ...et on les envoie en BDD
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin_article_list');
+        }
 
         return $this->render('admin/admin_insert_article.html.twig', [
             'articleForm' => $articleForm->createView()
