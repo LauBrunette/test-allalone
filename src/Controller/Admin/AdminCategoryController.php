@@ -15,7 +15,7 @@ class AdminCategoryController extends AbstractController
     /**
      * @Route("/admin/categories", name="admin_category_list")
      */
-    public function categoriyList(CategoryRepository $categoryRepository)
+    public function categoryList(CategoryRepository $categoryRepository)
     {
         $categories = $categoryRepository->findAll();
 
