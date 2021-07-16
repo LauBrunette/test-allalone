@@ -1,0 +1,30 @@
+{% extends 'front/base.html.twig' %}
+
+    {% block metaTitle %}
+
+        L'article : {{ article.title }}
+
+    {% endblock metaTitle %}
+
+    {% block main %}
+
+        <div class="container-show">
+
+            <article>
+                <h1>{{ article.title }}</h1>
+                <p>{{ article.description }}</p>
+                <!-- Permet d'afficher une date correctement -->
+                <div class="par">
+                    <p><strong>Article écrit le : </strong>{{ article.createdAt | date('y-m-d') }}</p>
+                    <p><strong>Catégorie : </strong>{{ article.category.title }}</p>
+                    <p><strong>Tag : </strong>{{ article.tag.name }}</p>
+                </div>
+                <div>
+                    <a href="{{ path('admin_article_delete', {'id': article.id }) }}">Supprimer</a>
+                    <a href="{{ path('admin_article_update', {'id': article.id }) }}">Mettre à jour</a>
+                </div>
+            </article>
+
+        </div>
+
+    {% endblock main %}

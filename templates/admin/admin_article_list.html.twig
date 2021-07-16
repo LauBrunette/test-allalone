@@ -17,13 +17,13 @@
             <div class="list">
                 {% for article in articles %}
                     <article>
-                        <a href={{ path('admin_article_list', {'id': article.id} ) }}>
+                        <a href={{ path('admin_article_show', {'id': article.id} ) }}>
 
                             <h3>{{ article.title }}</h3>
 
                         </a>
                         <a href="{{ path('admin_article_delete', {'id': article.id }) }}">Supprimer</a>
-                        <a href="{{ path('admin_article_update', {'id': article.id }) }}">Mettre à jour (hardcodé)</a>
+                        <a href="{{ path('admin_article_update', {'id': article.id }) }}">Mettre à jour</a>
                     </article>
                 {% endfor %}
             </div>
@@ -31,7 +31,7 @@
         <div class="insert-button">
 
             <button>
-                <a href="{{ path('admin_article_insert') }}">Ajouter un article (hardcodé)</a>
+                <a href="{{ path('admin_article_insert') }}">Ajouter un article</a>
             </button>
 
         </div>

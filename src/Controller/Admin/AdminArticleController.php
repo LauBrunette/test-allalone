@@ -111,5 +111,18 @@ class AdminArticleController extends AbstractController
             'articleForm' => $articleForm->createView()
         ]);
     }
+
+    /**
+     * @Route("/admin/articles/{id}", name="admin_article_show")
+     */
+    public function showArticle($id, ArticleRepository $articleRepository)
+    {
+
+        $article = $articleRepository->find($id);
+
+        return $this->render('admin/admin_article_show.html.twig', [
+            'article' => $article
+        ]);
+    }
 }
 

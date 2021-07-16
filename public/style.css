@@ -134,6 +134,9 @@ input[type=submit] {
 input[type=button] {
     margin-top: 50px;
 }
+button a {
+    text-decoration: none;
+}
 
 
 

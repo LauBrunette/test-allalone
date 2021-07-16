@@ -16,31 +16,42 @@
                     <div class="input-group mb-5">
                         {{ form_label(articleForm.title) }}
                         <div class="ms-5">{{ form_widget(articleForm.title) }}</div>
+                        <div class="ms-5">{{ form_errors(articleForm.title) }}</div>
                     </div>
 
                     <div class="input-group mb-5">
                         {{ form_label(articleForm.description, 'Description', {'attr': {'class': 'form-label'}}) }}
                         <div class="ms-5">{{ form_widget(articleForm.description, {'attr': {'class': 'form-control', 'style' : 'height: 300px', 'style' : 'width: 500px' }}) }}</div>
+                        <div class="ms-5">{{ form_errors(articleForm.description) }}</div>
+
                     </div>
 
                     <div class="input-group mb-5">
                         {{ form_label(articleForm.createdAt, 'Date de création', {'attr': {'class': 'form_article_createdAt_label'}}) }}
                         <div class="ms-5">{{ form_widget(articleForm.createdAt, {'attr': {'class': 'form_article_createdAt_input'}}) }}</div>
+                        <div class="ms-5">{{ form_errors(articleForm.createdAt) }}</div>
+
                     </div>
 
                     <div class="input-group mb-5">
                         {{ form_label(articleForm.isPublished) }}
                         <div class="ms-5">{{ form_widget(articleForm.isPublished) }}</div>
+                        <div class="ms-5">{{ form_errors(articleForm.isPublished) }}</div>
+
                     </div>
 
                     <div class="input-group mb-5">
                         {{ form_label(articleForm.category) }}
                         <div class="ms-5">{{ form_widget(articleForm.category) }}</div>
+                        <div class="ms-5">{{ form_errors(articleForm.category) }}</div>
+
                     </div>
 
                     <div class="input-group mb-5">
                         {{ form_label(articleForm.tag) }}
                         <div class="ms-5">{{ form_widget(articleForm.tag) }}</div>
+                        <div class="ms-5">{{ form_errors(articleForm.tag) }}</div>
+
                     </div>
 
                     <div class="d-flex justify-content-center">
@@ -56,7 +67,7 @@
                 <h1 class="text-end fw-bold fs-2 pb-3">Formulaire de modification</h1>
                 <p class="text-end">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur eos itaque mollitia quo repudiandae vero. Cum fugit natus quam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis culpa, laudantium non nostrum numquam obcaecati totam? Architecto sed, sint?</p>
                 <div class="d-flex justify-content-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-emoji-wink mt-4 " viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-emoji-wink mt-4 " viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm1.757-.437a.5.5 0 0 1 .68.194.934.934 0 0 0 .813.493c.339 0 .645-.19.813-.493a.5.5 0 1 1 .874.486A1.934 1.934 0 0 1 10.25 7.75c-.73 0-1.356-.412-1.687-1.007a.5.5 0 0 1 .194-.68z"/>
                     </svg>
