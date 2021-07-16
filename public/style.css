@@ -137,6 +137,9 @@ input[type=button] {
 button a {
     text-decoration: none;
 }
+.flash-message {
+    display: inline;
+}
 
 
 

@@ -55,6 +55,12 @@ class AdminArticleController extends AbstractController
 
         // Si le formulaire a été envoyé et que les champs sont tous remplis et valides (du bon type)
         if ($articleForm->isSubmitted() && $articleForm->isValid() ) {
+
+            $this->addFlash(
+                'success',
+                'L\'article '. $article->getTitle(). ' a bien été ajouté'
+            );
+
             // On pré-sauvegarde les données
             $entityManager->persist($article);
             // ...et on les envoie en BDD
@@ -78,6 +84,11 @@ class AdminArticleController extends AbstractController
         $entityManager->remove($article);
         $entityManager->flush();
 
+        $this->addFlash(
+            'success',
+            'L\'article '. $article->getTitle(). ' a bien été supprimé'
+        );
+
         return $this->redirectToRoute("admin_article_list");
     }
 
@@ -99,6 +110,11 @@ class AdminArticleController extends AbstractController
 
         // Si le formulaire a été envoyé et que les champs sont tous remplis et valides (du bon type)
         if ($articleForm->isSubmitted() && $articleForm->isValid()) {
+
+            $this->addFlash(
+                'success',
+                'L\'article '. $article->getTitle(). ' a bien été modifié'
+            );
             // On pré-sauvegarde les données
             $entityManager->persist($article);
             // ...et on les envoie en BDD

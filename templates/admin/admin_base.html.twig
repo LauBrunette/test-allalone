@@ -27,8 +27,21 @@
             </nav>
             <p>Vous êtes sur l'interface administrateur</p>
 
+
         </header>
         <main>
+
+
+            <div class="flash-message">
+
+                {% for message in app.flashes('success') %}
+                    <div>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+            </div>
+
 
             {% block main %}
             {% endblock main %}
